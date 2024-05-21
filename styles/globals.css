@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+html, body, #__next {
+  height: 100%;
+}
+
+.chat-editor:empty::before {
+  content: 'Start typing...';
+  color: gray;
+  pointer-events: none;
+}
+
+.article-title:empty::before {
+  content: 'Title ...';
+  color: gray;
+}
+
+.article-body:empty::before {
+  content: 'Content ...';
+  color: gray;
+}
+
+.article-body {
+  min-height: 18rem;
+}
+
+.article-body:focus {
+  outline: none;
+}
+
+.article-body p {
+  margin-top: 15px;
+  font-size: medium;
+}
+
+.article-body p:focus {
+  outline: none;
+}
+
+.article-body p:first-child {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: x-large;
+  font-weight: bold;
+}
+.article-body p:first-child:empty::before {
+  content: 'Title ...';
+  color: gray;
+}
+
+.ql-snow {
+  border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
+  border-radius: var(--bs-border-radius)!important;
+}
+
+.ql-editor {
+  min-height: 18rem;
+}
+
+.ql-editor p {
+  margin-top: 10px;
+  font-size: medium;
+}
